@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+$Primary-color: hsl(300, 43%, 22%);
+$Secondary-color: hsl(333, 80%, 67%);
+$Tertiary-color: hsl(303, 10%, 53%);
+$OffWhite-color: hsl(300, 24%, 96%);
+$White-color: hsl(0, 0%, 100%);
+
+$Font-Size: 15px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Spartan, sans-serif;
+  font-size: $Font-Size;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boss__container {
+  width: 85vw;
+  height: 85vh;
+  background-color: white;
+  background-image: url("../../images/bg-pattern-top-desktop.svg"),
+    url("../../images/bg-pattern-bottom-desktop.svg");
+  background-repeat: no-repeat;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+
+  .upperhalf__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text__container {
+      width: 50%;
+
+      .heading__text {
+        width: 50%;
+        font-size: 2em;
+        font-weight: 700;
+        color: $Primary-color;
+        margin-bottom: 1rem;
+      }
+
+      .text {
+        width: 70%;
+        color: $Tertiary-color;
+      }
+    }
+
+    .rating__container {
+      width: 50%;
+
+      .rating {
+        width: 400px;
+        padding: 1em;
+        margin: 1em;
+        background-color: lighten($Secondary-color, 28);
+        border-radius: 10px;
+        color: $Primary-color;
+        font-weight: 500;
+      }
+      .rating2 {
+        margin-left: 3em;
+      }
+      .rating3 {
+        margin-left: 6em;
+      }
+    }
+  }
+
+  .cards__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $White-color;
+
+    .card {
+      background-color: $Primary-color;
+      margin-right: 1em;
+      border-radius: 10px;
+      padding: 2em;
+
+      p {
+        color: $OffWhite-color;
+      }
+
+      .profile__container {
+        display: flex;
+        margin-bottom: 2em;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 2em;
+        }
+
+        .username {
+          h4 {
+            margin-bottom: 0.3em;
+          }
+          h5 {
+            color: $Secondary-color;
+          }
+        }
+      }
+    }
+
+    .card2 {
+      margin-top: 2em;
+    }
+    .card3 {
+      margin-top: 4em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
+
+  .boss__container {
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+
+    .upperhalf__container {
+      width: 95%;
+      flex-direction: column;
+
+      .text__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .heading__text {
+          width: 100%;
+          text-align: center;
+        }
+        .text {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .rating__container {
+        width: 100%;
+        margin-top: 1em;
+        .rating {
+          width: 100%;
+          margin-left: 0;
+          font-size: 0.8em;
+        }
+        .rating2,.rating3 {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .cards__container {
+      flex-direction: column;
+      justify-content: space-around;
+
+      .card, .card2, .card3 {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1em;
+      }
+    }
+  }
+}
